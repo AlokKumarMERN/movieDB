@@ -1,17 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react'
+import Button from 'react-bootstrap/Button';
+import Playground from './Playground';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div>
-        <h1>Hello Budy</h1>
-      </div>
-    </>
+    <div>
+      <Playground/>
+    </div>
   )
 }
 
