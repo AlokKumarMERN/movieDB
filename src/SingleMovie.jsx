@@ -3,13 +3,21 @@ import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router-dom'
 import useFetch from './useFetch';
 import { Card, Col, Row } from 'react-bootstrap';
+import Spinner from 'react-bootstrap/Spinner';
 
 const SingleMovie = () => {
   const {id} = useParams();
   const {isLoading, error, data} = useFetch(false, id)
 
   if(isLoading){
-    return <h1>Loading......</h1>
+    return (
+      <Container>
+        <Spinner animation="grow" />
+        <Spinner animation="border" role="status">
+      <span className="visually-hidden">Loading...</span>
+    </Spinner>
+          </Container>
+    )
   }
   if(error.show){
     return <h1>Error.....</h1>
